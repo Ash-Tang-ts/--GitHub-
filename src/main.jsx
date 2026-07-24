@@ -339,6 +339,7 @@ const strengths = [
 
 function navigate(path) {
   window.history.pushState({}, "", path);
+  window.scrollTo(0, 0);
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
 
@@ -796,7 +797,15 @@ function ProjectPage({ project }) {
 }
 
 function App() {
-  const slug = location.pathname.match(/^\/work\/([^/]+)$/)?.[1];
+  const [pathname, setPathname] = useState(() => window.location.pathname);
+
+  useEffect(() => {
+    const syncPathname = () => setPathname(window.location.pathname);
+    window.addEventListener("popstate", syncPathname);
+    return () => window.removeEventListener("popstate", syncPathname);
+  }, []);
+
+  const slug = pathname.match(/^\/work\/([^/]+)$/)?.[1];
   const project = projects.find((item) => item.slug === slug);
   return project ? <ProjectPage project={project} /> : <Home />;
 }
