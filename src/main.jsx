@@ -644,7 +644,7 @@ function Home() {
               <p className="section-index">WORK EXPERIENCE</p>
               <div className="experience-grid">
                 <article>
-                  <p>2026.04 — 2026.08</p>
+                  <p>2022.05 — 2026.08</p>
                   <h3>澳门「跨境说」深圳分公司</h3>
                   <strong>设计经理</strong>
                   <ul>
@@ -654,7 +654,7 @@ function Home() {
                   </ul>
                 </article>
                 <article>
-                  <p>2022.04 — 2025.11</p>
+                  <p>2019.04 — 2021.11</p>
                   <h3>深圳勇创商贸有限公司</h3>
                   <strong>设计主管</strong>
                   <ul>
